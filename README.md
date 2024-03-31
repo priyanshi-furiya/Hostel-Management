@@ -26,7 +26,7 @@ This project is a comprehensive web application built using Python, Flask, MySQL
 1. Clone the repository:
 
 
-git clone https://github.com/your-username/hostel-management-system.git
+git clone https://github.com/Priyanshi-Furiya/hostel-management-system.git
 
 
 2. Set up a MySQL database and import the provided SQL schema.
