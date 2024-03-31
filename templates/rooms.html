@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.anychart.com/releases/v8/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/js/anychart-vml.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.anychart.com/releases/v8/css/anychart-ui.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.anychart.com/releases/v8/fonts/css/anychart.min.css"
+    />
+    <title>Rooms</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='rooms.css')}}"
+    />
+  </head>
+  <body>
+    <div class="Dashboard">
+      <div class="Rectangle5"></div>
+      <div class="Rectangle6"></div>
+      <div class="Rectangle7" id="container1"></div>
+      <div class="Rectangle10">
+        <form action="/rooms" method="GET">
+          <label for="room"></label>
+          <input type="text" id="room" name="room" />
+          <br />
+          <input type="submit" value="Search" />
+        </form>
+      </div>
+      <div class="Rectangle9">
+        <table class="custom-table">
+          <tr>
+            <th>Student Id</th>
+            <th>Student Name</th>
+            <th>Room Number</th>
+            <th>Date of Birth</th>
+            <th>Allocation Date</th>
+          </tr>
+          {% for product in data %}
+          <tr>
+            <td>{{ product[0] }}</td>
+            <td>{{ product[1] }}</td>
+            <td>{{ product[2] }}</td>
+            <td>{{ product[3] }}</td>
+            <td>{{ product[4] }}</td>
+          </tr>
+          {% endfor %}
+        </table>
+      </div>
+      <div class="Rectangle8">Occupancy</div>
+      <div class="Rectangle70">
+        <a href="/allocation">Room Distribution</a>
+      </div>
+      <div class="Rectangle12">Rooms</div>
+      <div class="Rectangle11"></div>
+      <div class="Rectangle30"><a href="/">Dashboard</a></div>
+      <div class="Rectangle31"><a href="/attendance">Attendance</a></div>
+      <div class="Rectangle32"><a href="/accounts">Accounts</a></div>
+      <div class="Rectangle33"><a href="/amenities">Amenities</a></div>
+    </div>
+  </body>
+  <script>
+    anychart.onDocumentReady(function() {
+        var data = {{occupied_datas|safe }};
+        var chart3 = anychart.pie(data);
+        title= chart3.title("Occupancy Rate");
+        chart3.innerRadius("70%");
+        chart3.container("container1");
+        chart3.background().enabled(true); // Enable background
+        chart3.palette(["#FFE504","#2D2D2D"]);
+        chart3.background().fill("transparent"); // Set background fill color to transparent
+        chart3.draw();
+    });
+  </script>
+</html>

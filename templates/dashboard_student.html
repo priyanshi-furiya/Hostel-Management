@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.anychart.com/releases/v8/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/js/anychart-vml.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.anychart.com/releases/v8/css/anychart-ui.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.anychart.com/releases/v8/fonts/css/anychart.min.css"
+    />
+    <title>Dashboard Student</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='dashboard_student.css')}}"
+    />
+  </head>
+  <body>
+    <div class="Dashboard">
+      <div class="Rectangle5"></div>
+      <div class="Rectangle6"></div>
+      <div class="Rectangle7">
+        <div class="Rectangle50">Total Students<br />&emsp;&emsp;{{data}}</div>
+        <div class="Rectangle51">Fees Defaulter<br />&emsp;&emsp;{{data1}}</div>
+      </div>
+      <div class="Rectangle8">Student</div>
+      <div class="Rectangle13">
+        <form action="/dashboard.student" method="GET">
+          <label for="Name"></label>
+          <input type="text" id="name" name="Name" />
+          <br />
+          <input type="submit" value="Search" />
+        </form>
+        <table class="custom-table">
+          <tr>
+            <th>Student Name</th>
+            <th>Father Name</th>
+            <th>Father Contact Details</th>
+            <th>Mother Name</th>
+            <th>Mother Contact Details</th>
+          </tr>
+          {% for product in data2 %}
+          <tr>
+            <td>{{ product[0] }}</td>
+            <td>{{ product[1] }}</td>
+            <td>{{ product[2] }}</td>
+            <td>{{ product[3] }}</td>
+            <td>{{ product[4] }}</td>
+          </tr>
+          {% endfor %}
+        </table>
+      </div>
+      <div class="Rectangle10" style="overflow-x: auto">
+        <form action="/dashboard.student" method="GET">
+          <label for="date"></label>
+          <input type="date" id="date" name="date" />
+          <br />
+          <input type="submit" value="Search" />
+        </form>
+        <table class="custom-table">
+          <tr>
+            <th>Visitor Id</th>
+            <th>Visitor Name</th>
+            <th>Student Name</th>
+            <th>Room Number</th>
+            <th>Check in Time</th>
+            <th>Check out Time</th>
+          </tr>
+          {% for product in data3 %}
+          <tr>
+            <td>{{ product[0] }}</td>
+            <td>{{ product[1] }}</td>
+            <td>{{ product[2] }}</td>
+            <td>{{ product[3] }}</td>
+            <td>{{ product[4] }}</td>
+            <td>{{ product[5] }}</td>
+          </tr>
+          {% endfor %}
+        </table>
+      </div>
+      <div class="Rectangle12">Dashboard</div>
+      <div class="Rectangle11"></div>
+      <div class="Rectangle20"><a href="/">Analytics</a></div>
+      <div class="Rectangle21"><a href="/complaints">Complaints</a></div>
+      <div class="Rectangle30"><a href="/rooms">Rooms</a></div>
+      <div class="Rectangle31"><a href="/attendance">Attendance</a></div>
+      <div class="Rectangle32"><a href="/accounts">Accounts</a></div>
+      <div class="Rectangle33"><a href="/amenities">Amenities</a></div>
+    </div>
+  </body>
+</html>

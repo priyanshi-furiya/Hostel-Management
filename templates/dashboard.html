@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.anychart.com/releases/v8/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/js/anychart-vml.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.anychart.com/releases/v8/css/anychart-ui.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.anychart.com/releases/v8/fonts/css/anychart.min.css"
+    />
+    <title>Dashboard</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='dashboard.css')}}"
+    />
+  </head>
+  <body>
+    <div class="Dashboard">
+      <div class="Rectangle5"></div>
+      <div class="Rectangle6"></div>
+      <div class="Rectangle7" id="container1"></div>
+      <div class="Rectangle8">Analytics</div>
+      <div class="Rectangle13" id="container3"></div>
+      <div class="Rectangle13_1">
+        <div class="Rectangle50" id="expected">
+          Expected<br />Rs.&emsp;{{data}}
+        </div>
+        <div class="Rectangle51" id="collected">
+          Collected<br />Rs.&emsp;{{data1}}
+        </div>
+        <div class="Rectangle52" id="remaining">
+          Remaining<br />Rs.&emsp;{{data2}}
+        </div>
+      </div>
+      <div class="Rectangle9" id="container2"></div>
+      <div class="Rectangle10"></div>
+      <div class="Rectangle17"></div>
+      <div class="Rectangle10_1"></div>
+      <div class="header">
+        <h2>Generative Query</h2>
+      </div>
+      <textarea
+        id="queryInput"
+        class="Rectangle10"
+        placeholder="Enter what you want to search..."
+      ></textarea>
+      <button class="Rectangle17" onclick="executeQuery()">
+        Execute Query
+      </button>
+      <div id="queryResult" class="Rectangle10_1"></div>
+      <div class="Rectangle12">Dashboard</div>
+      <div class="Rectangle11"></div>
+      <div class="Rectangle20"><a href="/dashboard.student">Students</a></div>
+      <div class="Rectangle21"><a href="/complaints">Complaints</a></div>
+      <div class="Rectangle30"><a href="/rooms">Rooms</a></div>
+      <div class="Rectangle31"><a href="/attendance">Attendance</a></div>
+      <div class="Rectangle32"><a href="/accounts">Accounts</a></div>
+      <div class="Rectangle33"><a href="/amenities">Amenities</a></div>
+    </div>
+    <script>
+      anychart.onDocumentReady(function() {
+          var data = {{occupied_data|safe }};
+          var chart1 = anychart.pie(data);
+          title = chart1.title("Occupancy Rate");
+          chart1.innerRadius("70%");
+          chart1.container("container1");
+          chart1.background().enabled(true); // Enable background
+          chart1.palette(["#FFE504","#2D2D2D"]);
+          chart1.background().fill("transparent"); // Set background fill color to transparent
+          chart1.draw();
+
+          var data = {{ formatted_data|safe }};
+          var chart2 = anychart.bar();
+          var series = chart2.bar(data);
+          title = chart2.title("Complaint Status");
+          chart2.container("container2");
+          chart2.palette(["#00fff5","#ffe504"]);
+          chart2.background().enabled(true); // Enable background
+          chart2.background().fill("transparent");
+          chart2.draw();
+
+          anychart.onDocumentReady(function() {
+          var data = {{occupied_datas|safe }};
+          var chart3 = anychart.pie(data);
+          title = chart3.title("Accounts");
+          chart3.innerRadius("70%");
+          chart3.container("container3");
+          chart3.background().enabled(true); // Enable background
+          chart3.palette(["#00FFF5","#FFE504"]);
+          chart3.background().fill("transparent"); // Set background fill color to transparent
+          chart3.draw();
+        });
+      });
+        function executeQuery() {
+            var query = document.getElementById('queryInput').value;
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "/execute_query", true);
+            xhr.setRequestHeader('Content-Type', 'application/json');
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    document.getElementById("queryResult").innerText = xhr.responseText;
+                }
+            };
+            xhr.send(JSON.stringify({query: query}));
+        }
+    </script>
+  </body>
+</html>

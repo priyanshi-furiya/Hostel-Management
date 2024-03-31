@@ -1,0 +1,284 @@
+.Dashboard {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    background: black;
+}
+.Rectangle5 {
+    width: 100vw;
+    height: 80px;
+    position: absolute;
+    background: #202020;
+}
+.Rectangle6 {
+    width: 15.8%;
+    height: 75.17%;
+    left: 1.5%;
+    top: 18.08%;
+    position: absolute;
+    background: #202020;
+    border-radius: 10px;
+}
+.Rectangle7{
+    width: 60.08%;
+    height: 21%;
+    left: 20.17%;
+    top: 18.08%;
+    position: absolute;
+    background: #202020;
+    border-radius: 10px;
+}
+.Rectangle8{
+    width: 15.8%;
+    height: 6%;
+    left : 1.5%;
+    position: absolute;
+    background: #2E2E2E;
+    top: 15%;
+    border-radius: 10px;
+    text-align: center;
+    padding-top: 2%;
+    color: white;
+}
+.Rectangle9{
+    width: 60.08%;
+    height: 17.5%;
+    left: 20.17%;
+    top: 79%;
+    position: absolute;
+    background: #202020;
+    border-radius: 10px;
+}
+.Rectangle13{
+    width: 30%;
+    height: 34%;
+    left: 20%;
+    top: 42%;
+    position: absolute;
+    background: #202020;
+    border-radius: 10px;
+}
+.Rectangle13_1{
+    width: 40%;
+    height: 34%;
+    left: 40%;
+    top: 42%;
+    position: absolute;
+    background: #202020;
+    border-radius: 10px;
+}
+.Rectangle10{
+    width: 16.31%;
+    height: 20%;
+    left: 82%;
+    top: 18.08%;
+    position: absolute;
+    background: #b4b4b4;
+    border-radius: 10px;
+    opacity: 0.3;
+}
+.Rectangle17{
+    width: 8%;
+    height: 5%;
+    left: 86%;
+    top: 40.125%;
+    position: absolute;
+    background: #b4b4b4;
+    border-radius: 10px;
+    opacity: 0.5;
+}
+.Rectangle10_1{
+    width: 16.31%;
+    height: 49%;
+    left: 82%;
+    top: 47%;
+    position: absolute;
+    background: #b4b4b4;
+    border-radius: 10px;
+    opacity: 0.3;
+    overflow: auto;
+}
+.Rectangle12{
+    width: 14%;
+    height: 6%;
+    left: 18%;
+    top: 3.8%;
+    position: absolute;
+    background-color: black;
+    border: 1px solid #00FFF5;
+    border-radius: 10px;
+    text-align: center;
+    padding-top: 2%;
+    color: white;
+}
+.Rectangle11{
+    width: 17%;
+    height: 2%;
+    left: 18%;
+    top: 12%;
+    position: absolute;
+    background-color: black;
+}
+.Rectangle20{
+    width: 15.8%;
+    height: 6%;
+    left : 1.5%;
+    position: absolute;
+    background: #202020;
+    top: 28%;
+    border-radius: 10px;
+}
+.Rectangle20 a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none; 
+    color: inherit; 
+    text-align: center;
+    color: white;
+}
+.Rectangle21{
+    width: 15.8%;
+    height: 6%;
+    left : 1.5%;
+    position: absolute;
+    background: #202020;
+    top: 36%;
+    border-radius: 10px;
+}
+.Rectangle21 a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none; 
+    color: inherit; 
+    text-align: center;
+    color: white;
+}
+.Rectangle30{
+    width: 16%;
+    height: 5%;
+    left : 34%;
+    position: absolute;
+    background: #202020;
+    top: 3%;
+    border-radius: 10px;
+    padding-top: 2%;
+}
+.Rectangle30 a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none; 
+    color: inherit; 
+    text-align: center;
+    color: white;
+}
+.Rectangle31{
+    width: 16%;
+    height: 5%;
+    left : 50%;
+    position: absolute;
+    background: #202020;
+    top: 3%;
+    border-radius: 10px;
+    padding-top: 2%;
+}
+.Rectangle31 a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none; 
+    color: inherit; 
+    text-align: center;
+    color: white;
+}
+
+.Rectangle32{
+    width: 16%;
+    height: 5%;
+    left : 65%;
+    position: absolute;
+    background: #202020;
+    top: 3%;
+    border-radius: 10px;
+    padding-top: 2%;
+}
+.Rectangle32 a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none; 
+    color: inherit; 
+    text-align: center;
+    color: white;
+}
+
+.Rectangle33{
+    width: 16%;
+    height: 5%;
+    left : 80%;
+    position: absolute;
+    background: #202020;
+    top: 3%;
+    border-radius: 10px;
+    padding-top: 2%;
+}
+.Rectangle33 a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none; 
+    color: inherit; 
+    text-align: center;
+    color: white;
+}
+.Rectangle50{
+    width: 25%;
+    height: 30%;
+    left : 30%;
+    position: absolute;
+    background: #111111;
+    top: 10%;
+    border-radius: 10px;
+    text-align: left;
+    color: white;
+    padding-left: 1.5%;
+    padding-top: 1.5%;
+    font-size: 20px;
+}
+.Rectangle51{
+    width: 25%;
+    height: 30%;
+    left : 65%;
+    position: absolute;
+    background: #111111;
+    top: 10%;
+    border-radius: 10px;
+    text-align: left;
+    color: white;
+    padding-left: 1.5%;
+    padding-top: 1.5%;
+    font-size: 20px;
+    color : #00FFF5;
+}
+.Rectangle52{
+    width: 25%;
+    height: 30%;
+    left : 50%;
+    position: absolute;
+    background: #111111;
+    top: 55%;
+    border-radius: 10px;
+    text-align: left;
+    color: white;
+    padding-left: 1.5%;
+    padding-top: 1.5%;
+    font-size: 20px;
+    color: #FFE504;
+}
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}

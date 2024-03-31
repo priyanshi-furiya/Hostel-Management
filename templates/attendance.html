@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Attendance</title>
+    <link rel="stylesheet" href="static\attendance.css" />
+  </head>
+  <body>
+    <div class="Dashboard">
+      <div class="Rectangle5"></div>
+      <div class="Rectangle6"></div>
+      <div class="Rectangle7">
+        <table class="custom-table">
+          <tr>
+            <th>Student Name</th>
+            <th>Check In</th>
+            <th>Check Out</th>
+            <th>Room No</th>
+          </tr>
+          {% for product in data %}
+          <tr>
+            <td>{{ product[0] }}</td>
+            <td>{{ product[1] }}</td>
+            <td>{{ product[2] }}</td>
+            <td>{{ product[3] }}</td>
+          </tr>
+          {% endfor %}
+        </table>
+      </div>
+      <div class="Rectangle8">Dashboard</div>
+      <div class="Rectangle20"><a href="/attendance.in">In</a></div>
+      <div class="Rectangle21">
+        <a href="/attendance.out">Out</a>
+      </div>
+      <div class="Rectangle12">Attendance</div>
+      <div class="Rectangle11"></div>
+      <div class="Rectangle30"><a href="/rooms">Rooms</a></div>
+      <div class="Rectangle31"><a href="/">Dashboard</a></div>
+      <div class="Rectangle32"><a href="/accounts">Accounts</a></div>
+      <div class="Rectangle33"><a href="/amenities">Amenities</a></div>
+    </div>
+  </body>
+</html>

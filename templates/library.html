@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.anychart.com/releases/v8/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/js/anychart-vml.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.anychart.com/releases/v8/css/anychart-ui.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.anychart.com/releases/v8/fonts/css/anychart.min.css"
+    />
+    <title>Amenities</title>
+    <link rel="stylesheet" href="static\library.css" />
+  </head>
+  <body>
+    <div class="Dashboard">
+      <div class="Rectangle5"></div>
+      <div class="Rectangle6"></div>
+      <div class="Rectangle7" style="overflow-x: auto">
+        <form action="/amenities.library" method="GET">
+          <label for="date"></label>
+          <input type="date" id="date" name="date" />
+          <br />
+          <input type="submit" value="Search" />
+        </form>
+        <table class="custom-table">
+          <tr>
+            <th>Student Name</th>
+            <th>College</th>
+            <th>Book Type</th>
+            <th>Timing</th>
+          </tr>
+          {% for product in data %}
+          <tr>
+            <td>{{ product[0] }}</td>
+            <td>{{ product[1] }}</td>
+            <td>{{ product[2] }}</td>
+            <td>{{ product[3] }}</td>
+          </tr>
+          {% endfor %}
+        </table>
+      </div>
+      <div class="Rectangle9" id="container2"></div>
+      <div class="Rectangle8">Library</div>
+      <div class="Rectangle20"><a href="/amenities.laundry">Laundry</a></div>
+      <div class="Rectangle21">
+        <a href="/amenities.gym">Gym</a>
+      </div>
+      <div class="Rectangle22">
+        <a href="/amenities">Mess</a>
+      </div>
+      <div class="Rectangle12">Amenities</div>
+      <div class="Rectangle11"></div>
+      <div class="Rectangle30"><a href="/rooms">Rooms</a></div>
+      <div class="Rectangle31"><a href="/">Dashboard</a></div>
+      <div class="Rectangle32"><a href="/accounts">Accounts</a></div>
+      <div class="Rectangle33"><a href="/attendance">Attendance</a></div>
+    </div>
+  </body>
+  <script>
+    anychart.onDocumentReady(function() {
+        var data = {{ formatted_data|safe }};
+        var chart2 = anychart.bar();
+        var series = chart2.bar(data);
+        title = chart2.title("Types of books Borrowed");
+        chart2.container("container2");
+        chart2.palette(["#00fff5","#ffe504"]);
+        chart2.background().enabled(true); // Enable background
+        chart2.background().fill("transparent");
+        chart2.draw();
+    });
+  </script>
+</html>

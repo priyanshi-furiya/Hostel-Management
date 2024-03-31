@@ -1,0 +1,230 @@
+.Dashboard {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    background: black;
+}
+.Rectangle5 {
+    width: 100vw;
+    height: 80px;
+    position: absolute;
+    background: #202020;
+}
+.Rectangle6 {
+    width: 15.8%;
+    height: 75.17%;
+    left: 1.5%;
+    top: 18.08%;
+    position: absolute;
+    background: #202020;
+    border-radius: 10px;
+}
+.Rectangle7{
+    width: 25%;
+    height: 45%;
+    left: 20.17%;
+    top: 40%;
+    position: absolute;
+    background: #202020;
+    border-radius: 10px;
+}
+.Rectangle9{
+    width: 48%;
+    height: 55%;
+    left: 48%;
+    top: 35%;
+    position: absolute;
+    background: #202020;
+    border-radius: 10px;
+}
+.Rectangle10{
+    width: 35%;
+    height: 10%;
+    left: 45%;
+    top: 17%;
+    position: absolute;
+    background: transparent;
+    border-radius: 10px;
+
+}
+.Rectangle8{
+    width: 15.8%;
+    height: 6%;
+    left : 1.5%;
+    position: absolute;
+    background: #2E2E2E;
+    top: 15%;
+    border-radius: 10px;
+    text-align: center;
+    padding-top: 2%;
+    color: white;
+}
+.Rectangle70{
+    width: 15.8%;
+    height: 6%;
+    left : 1.5%;
+    position: absolute;
+    background: #202020;
+    top: 26%;
+    border-radius: 10px;
+    text-align: center;
+    padding-top: 2%;
+    color: white;
+    text-decoration: none;
+}
+.Rectangle70 a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none; 
+    color: inherit; 
+    text-align: center;
+    color: white;
+    padding-top: 5%;
+}
+
+.Rectangle12{
+    width: 14%;
+    height: 6%;
+    left: 34%;
+    top: 3.8%;
+    position: absolute;
+    background-color: black;
+    border: 1px solid #00FFF5;
+    border-radius: 10px;
+    text-align: center;
+    padding-top: 2%;
+    color: white;
+}
+.Rectangle11{
+    width: 17%;
+    height: 2%;
+    left: 34%;
+    top: 12%;
+    position: absolute;
+    background-color: black;
+}
+
+.Rectangle30{
+    width: 16%;
+    height: 5%;
+    left : 18%;
+    position: absolute;
+    background: #202020;
+    top: 3%;
+    border-radius: 10px;
+    padding-top: 2%;
+}
+.Rectangle30 a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none; 
+    color: inherit; 
+    text-align: center;
+    color: white;
+}
+.Rectangle31{
+    width: 16%;
+    height: 5%;
+    left : 50%;
+    position: absolute;
+    background: #202020;
+    top: 3%;
+    border-radius: 10px;
+    padding-top: 2%;
+}
+.Rectangle31 a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none; 
+    color: inherit; 
+    text-align: center;
+    color: white;
+}
+
+.Rectangle32{
+    width: 16%;
+    height: 5%;
+    left : 65%;
+    position: absolute;
+    background: #202020;
+    top: 3%;
+    border-radius: 10px;
+    padding-top: 2%;
+}
+.Rectangle32 a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none; 
+    color: inherit; 
+    text-align: center;
+    color: white;
+}
+
+.Rectangle33{
+    width: 16%;
+    height: 5%;
+    left : 80%;
+    position: absolute;
+    background: #202020;
+    top: 3%;
+    border-radius: 10px;
+    padding-top: 2%;
+}
+.Rectangle33 a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none; 
+    color: inherit; 
+    text-align: center;
+    color: white;
+}
+.custom-table {
+    width: 100%;
+    font-size: 20px; /* Increase font size */
+    color: white; /* Change text color to white */
+    border-collapse: collapse;
+}
+
+.custom-table th,
+.custom-table td {
+    padding: 8px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.custom-table th {
+    background-color: #333;
+    color: white;
+}
+.custom-table,
+.custom-table th,
+.custom-table td {
+    border-color: #00FFF5; /* Change border color to white */
+}
+.Rectangle10 form #room {
+    position: absolute;
+    font-size: 18px;
+    top: 50%; /* Position the form 50% from the top of Rectangle40 */
+    left: 25%; /* Position the form 50% from the left of Rectangle40 */
+    transform: translate(-50%, -50%);
+    height: 50%; /* Center the form within Rectangle40 */
+  }
+
+  .Rectangle10 input[type="submit"] {
+    position: absolute;
+    font-size: 18px;
+    top: 50%; /* Position the search button 50% from the top of Rectangle40 */
+    left: 65%; /* Position the search button 120% from the left of Rectangle40 */
+    transform: translate(-50%, -50%);
+    height : 50%; /* Center the search button vertically within Rectangle40 */
+  }
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}

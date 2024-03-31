@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Amenities</title>
+    <link rel="stylesheet" href="static\amenities.css" />
+  </head>
+  <body>
+    <div class="Dashboard">
+      <div class="Rectangle5"></div>
+      <div class="Rectangle6"></div>
+      <div class="Rectangle7"></div>
+      <div class="Rectangle8">Mess</div>
+      <div class="Rectangle20"><a href="/amenities.laundry">Laundry</a></div>
+      <div class="Rectangle21">
+        <a href="/amenities.gym">Gym</a>
+      </div>
+      <div class="Rectangle22">
+        <a href="/amenities.library">Library</a>
+      </div>
+      <div class="Rectangle12">Amenities</div>
+      <div class="Rectangle11"></div>
+      <div class="Rectangle7" style = overflow-x:auto;>Meal Wise
+        <table class="custom-table">
+          <tr>
+            <th>Menu</th>
+            <th>Total</th>
+          </tr>
+          {% for product in data %}
+          <tr>
+            <td>{{ product[0] }}</td>
+            <td>{{ product[1] }}</td>
+          </tr>
+          {% endfor %}
+        </table>
+      </div>
+      <div class="Rectangle9" style = overflow-x:auto;>
+        <form action="/amenities" method="GET">
+          <label for = date>From:</label>
+          <input type="date" id="date1" name="date1" required>
+          <label for = date>To:</label>
+          <input type="date" id="date2" name="date2" required>
+          <input type="submit" value="Submit">
+          <label for = Total> Total Amount:
+          {{data1}}
+          </label>
+        </form>
+        <table class="custom-table">
+          <tr>
+            <th>Menu</th>
+            <th>Total</th>
+          </tr>
+          {% for product in data2 %}
+          <tr>
+            <td>{{ product[0] }}</td>
+            <td>{{ product[1] }}</td>
+          </tr>
+          {% endfor %}
+        </table>
+      </div>
+      <div class="Rectangle10"style = overflow-x:auto;>
+        <form action="/amenities" method="GET">
+          <label for = date>Enter Month:</label>
+          <input type="text" id="month" name="month" required>
+          <input type="submit" value="Submit">
+          <label for = Total> Total Amount:
+          {{data4}}
+        </form>
+        <table class="custom-table">
+          <tr>
+            <th>Menu</th>
+            <th>Total</th>
+          </tr>
+          {% for product in data5 %}
+          <tr>
+            <td>{{ product[0] }}</td>
+            <td>{{ product[1] }}</td>
+          </tr>
+          {% endfor %}
+        </table>
+      </div>
+      <div class="Rectangle30"><a href="/rooms">Rooms</a></div>
+      <div class="Rectangle31"><a href="/">Dashboard</a></div>
+      <div class="Rectangle32"><a href="/accounts">Accounts</a></div>
+      <div class="Rectangle33"><a href="/attendance">Attendance</a></div>
+    </div>
+  </body>
+</html>

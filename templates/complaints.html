@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.anychart.com/releases/v8/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/js/anychart-vml.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.anychart.com/releases/v8/css/anychart-ui.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.anychart.com/releases/v8/fonts/css/anychart.min.css"
+    />
+    <title>Complaints</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='complaints.css')}}"
+    />
+  </head>
+  <body>
+    <div class="Dashboard">
+      <div class="Rectangle5"></div>
+      <div class="Rectangle6"></div>
+      <div class="Rectangle7" id="container2"></div>
+      <div class="Rectangle8">Complaints</div>
+      <div class="Rectangle13" style="overflow-x: auto">
+        Open Complaints
+        <table class="custom-table">
+          <tr>
+            <th>Complaint Id</th>
+            <th>Student Name</th>
+            <th>Complaint Date</th>
+            <th>Description</th>
+          </tr>
+          {% for product in data4 %}
+          <tr>
+            <td>{{ product[0] }}</td>
+            <td>{{ product[1] }}</td>
+            <td>{{ product[2] }}</td>
+            <td>{{ product[3] }}</td>
+          </tr>
+          {% endfor %}
+        </table>
+      </div>
+      <div class="Rectangle10" style="overflow-x: auto">
+        Close Complaints
+        <table class="custom-table">
+          <tr>
+            <th>Complaint Id</th>
+            <th>Student Name</th>
+            <th>Complaint Date</th>
+            <th>Description</th>
+          </tr>
+          {% for product in data3 %}
+          <tr>
+            <td>{{ product[0] }}</td>
+            <td>{{ product[1] }}</td>
+            <td>{{ product[2] }}</td>
+            <td>{{ product[3] }}</td>
+          </tr>
+          {% endfor %}
+        </table>
+      </div>
+      <div class="Rectangle12">Dashboard</div>
+      <div class="Rectangle11"></div>
+      <div class="Rectangle20"><a href="/">Analytics</a></div>
+      <div class="Rectangle21"><a href="/dashboard.student">Students</a></div>
+      <div class="Rectangle30"><a href="/rooms">Rooms</a></div>
+      <div class="Rectangle31"><a href="/attendance">Attendance</a></div>
+      <div class="Rectangle32"><a href="/accounts">Accounts</a></div>
+      <div class="Rectangle33"><a href="/amenities">Amenities</a></div>
+    </div>
+  </body>
+  <script>
+    anychart.onDocumentReady(function()
+    {
+        var data = {{ formatted_data|safe }};
+        var chart2 = anychart.bar();
+        var series = chart2.bar(data);
+        title = chart2.title("Complaint Status");
+        chart2.container("container2");
+        chart2.palette(["#00fff5","#ffe504"]);
+        chart2.background().enabled(true); // Enable background
+        chart2.background().fill("transparent");
+        chart2.draw();
+      });
+  </script>
+</html>

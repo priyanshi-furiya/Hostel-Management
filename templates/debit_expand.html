@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Debit</title>
+    <link rel="stylesheet" href="static\debit_expand.css" />
+  </head>
+  <body>
+    <div class="Dashboard">
+      <div class="Rectangle5"></div>
+      <div class="Rectangle6"></div>
+      <div class="Rectangle7" style="overflow-x: auto">
+        Debit History
+        <table class="custom-table">
+          <tr>
+            <th>Staff Id</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Role</th>
+            <th>Salary</th>
+            <th>Payment Date</th>
+          </tr>
+          {% for product in data4 %}
+          <tr>
+            <td>{{ product[0] }}</td>
+            <td>{{ product[1] }}</td>
+            <td>{{ product[2] }}</td>
+            <td>{{ product[3] }}</td>
+            <td>{{ product[4] }}</td>
+            <td>{{ product[5] }}</td>
+          </tr>
+          {% endfor %}
+        </table>
+      </div>
+      <div class="Rectangle8">Debit</div>
+      <div class="Rectangle12">Accounts</div>
+      <div class="Rectangle11"></div>
+      <div class="Rectangle20"><a href="/accounts">Dashboard</a></div>
+      <div class="Rectangle21"><a href="/accounts.credits">Credit</a></div>
+      <div class="Rectangle30"><a href="/rooms">Rooms</a></div>
+      <div class="Rectangle31"><a href="/">Dashboard</a></div>
+      <div class="Rectangle32"><a href="/attendance">Attendance</a></div>
+      <div class="Rectangle33"><a href="/amenities">Amenities</a></div>
+    </div>
+  </body>
+</html>

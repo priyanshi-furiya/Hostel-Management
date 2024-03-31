@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.anychart.com/releases/v8/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/js/anychart-vml.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.anychart.com/releases/v8/css/anychart-ui.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.anychart.com/releases/v8/fonts/css/anychart.min.css"
+    />
+    <title>Attendance-In</title>
+    <link rel="stylesheet" href="static\attendance_in.css" />
+  </head>
+  <body>
+    <div class="Dashboard">
+      <div class="Rectangle5"></div>
+      <div class="Rectangle6"></div>
+      <div class="Rectangle40">
+        <form action="/attendance.in" method="GET">
+          <label for="date"></label>
+          <input type="date" id="date" name="date" />
+          <br />
+          <label for="time"></label>
+          <input type="time" id="time" name="time" />
+          <br />
+          <input type="submit" value="Search" />
+        </form>
+      </div>
+      <div class="Rectangle7" style="overflow-x: auto">
+        <table class="custom-table">
+          <tr>
+            <th>Student Name</th>
+            <th>Check In Time</th>
+            <th>Room No</th>
+          </tr>
+          {% for product in data %}
+          <tr>
+            <td>{{ product[0] }}</td>
+            <td>{{ product[1] }}</td>
+            <td>{{ product[2] }}</td>
+          </tr>
+          {% endfor %}
+        </table>
+      </div>
+      <div class="Rectangle8">In</div>
+      <div class="Rectangle12">Attendance</div>
+      <div class="Rectangle11"></div>
+      <div class="Rectangle20"><a href="/attendance">Dashboard</a></div>
+      <div class="Rectangle21"><a href="/attendance.out">Out</a></div>
+      <div class="Rectangle30"><a href="/rooms">Rooms</a></div>
+      <div class="Rectangle31"><a href="/">Dashboard</a></div>
+      <div class="Rectangle32"><a href="/accounts">Accounts</a></div>
+      <div class="Rectangle33"><a href="/amenities">Amenities</a></div>
+    </div>
+  </body>
+</html>
